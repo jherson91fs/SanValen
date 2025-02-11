@@ -3,8 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffe6e6;
-    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/vector-gratis/borde-corazones-acuarela_52683-81078.jpg?t=st=1739252613~exp=1739256213~hmac=45b29a493a7cdc69cb7bab4026565b45e9c9a6214162c5d93d1157655b723594&w=1380') no-repeat center center/cover;
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     margin: 0;
     overflow: hidden;
@@ -12,45 +12,73 @@ body {
 }
 
 .container {
-    background: white;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+#gifImage {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
-    margin-top: 20px;
-    position: relative; /* Añadir esto para que absolute funcione dentro de este div */
 }
 
 button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1.2rem;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 #yesButton {
     background-color: #ff4081;
     color: white;
-    margin-right: 200px;
 }
 
 #yesButton:hover {
-    background-color: #e6005c;
+    background-color: #e91e63;
 }
 
 #noButton {
+    background-color: #757575;
+    color: white;
     position: absolute;
-    left: 50%;  /* Centra el botón inicialmente */
-    transform: translateX(-50%); /* Ajuste fino */
-    transition: 0.2s ease-in-out;
-    margin-left: 100px;
+}
+
+#noButton:hover {
+    background-color: #616161;
+}
+
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
