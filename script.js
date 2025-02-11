@@ -2,8 +2,11 @@ document.getElementById("yesButton").addEventListener("click", function() {
     window.open("mensaje.html", "_blank");
 });
 
-document.getElementById("noButton").addEventListener("mouseover", function(event) {
-    if (window.innerWidth > 768) { // Solo se mueve en pantallas grandes
+const noButton = document.getElementById("noButton");
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (!isMobile) {
+    noButton.addEventListener("mouseover", function() {
         let button = this;
         let container = document.querySelector(".container");
         
@@ -20,7 +23,8 @@ document.getElementById("noButton").addEventListener("mouseover", function(event
         let newY = Math.random() * maxY;
         
         // Aplicar la nueva posición
+        button.style.position = "absolute";
         button.style.left = `${newX}px`;
         button.style.top = `${newY}px`;
-    }
-});
+    });
+}
