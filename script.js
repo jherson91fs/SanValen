@@ -34,10 +34,10 @@ const yesButton = document.getElementById("yesButton");
 const gifImage = document.getElementById("gifImage");
 
 const gifs = [
-    "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9xbTF0cXl3MzljNTk2Z2xjb3E5cnlzbDV5ZXU2cXJqMWJ2b2FreiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Y2pSc6cEsuslW/giphy.gif",
-    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
-    "https://media.giphy.com/media/3ohs4vYFQwDd2PsOPY/giphy.gif",
-    "https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif"
+    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p5djN6cnduNHRheHJoMjZhdWV2eHNha2J6OXExc3F1dHZidmc0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K6WIhJ07gwGkIAQfwN/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW14ZXo1czl6bTM1c2FodGlpbXRja2Q2YjN4cXVvbTJseml6eWg2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iFOxtmdDxbaoq60EUg/giphy.gif",
+    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXBmaXVxYTNzc2l6eXdvM2NyeHNmdWcybnlkdnNuYTViNHB0bGtodSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/THaoh0d7jN1pvXxouO/giphy.gif",
+    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTQ1MXdmbGtkamIwMXg1N3BvMXlrMDdkZ2psNm1hb3FiZHdlcmFzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GeJZGePN13KaeTmGa7/giphy.gif"
 ];
 
 let clickCount = 0;
