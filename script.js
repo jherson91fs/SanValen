@@ -29,10 +29,16 @@
 //     });
 // }
 
-const noButton = document.getElementById("noButton");
-const yesButton = document.getElementById("yesButton");
-const gifImage = document.getElementById("gifImage");
-
+const noButton = document.getElementById('noButton');
+const yesButton = document.getElementById('yesButton');
+const gifImage = document.getElementById('gifImage');
+const messages = [
+    "¿Seguro? 😢",
+    "¿De verdad lo estás pensando? 💔",
+    "No me hagas esto... 😭",
+    "Piensa bien... 🥺",
+    "Última oportunidad 😞"
+];
 const gifs = [
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p5djN6cnduNHRheHJoMjZhdWV2eHNha2J6OXExc3F1dHZidmc0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K6WIhJ07gwGkIAQfwN/giphy.gif",
     "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW14ZXo1czl6bTM1c2FodGlpbXRja2Q2YjN4cXVvbTJseml6eWg2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iFOxtmdDxbaoq60EUg/giphy.gif",
@@ -42,21 +48,30 @@ const gifs = [
 
 let clickCount = 0;
 
-noButton.addEventListener("click", function () {
-    clickCount++;
+noButton.addEventListener('click', () => {
+    if (clickCount < messages.length) {
+        noButton.textContent = messages[clickCount];
+    } else {
+        noButton.textContent = "Ya no puedes decir que no 😆";
+    }
     
-    // Cambia el GIF cada vez que se presiona "No"
-    gifImage.src = gifs[clickCount % gifs.length];
+    gifImage.src = gifs[Math.floor(Math.random() * gifs.length)];
     
-    // Mueve el botón a una nueva posición aleatoria
-    const x = Math.random() * (window.innerWidth - noButton.clientWidth);
-    const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+    // Asegurar que el botón NO no se salga de la pantalla
+    const buttonWidth = noButton.offsetWidth;
+    const buttonHeight = noButton.offsetHeight;
+    const maxX = window.innerWidth - buttonWidth - 20;
+    const maxY = window.innerHeight - buttonHeight - 20;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
     
     noButton.style.position = "absolute";
     noButton.style.left = `${x}px`;
     noButton.style.top = `${y}px`;
+    
+    clickCount++;
 });
 
-yesButton.addEventListener("click", function () {
+yesButton.addEventListener('click', () => {
     window.location.href = "mensaje.html";
 });
