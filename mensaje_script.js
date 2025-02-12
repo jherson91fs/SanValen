@@ -45,8 +45,27 @@ function showResponse(text) {
 }
 
 
-function obtenerURLdeEnvio() {
-    var form = FormApp.openById("TU_FORM_ID");
-    Logger.log(form.getPublishedUrl());
-  }
-  
+document.getElementById("submitMessage").addEventListener("click", function() {
+    let message = document.getElementById("userMessage").value;
+    
+    if (message.trim() === "") {
+        alert("Por favor, escribe un mensaje antes de enviarlo.");
+        return;
+    }
+
+    let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSerg2PqKnZ-EZHKytd92c3UirHqX07c_CF26gAMYekkxwXGiQ/formResponse";
+    let formData = new FormData();
+    formData.append("entry.1586503523", message);
+
+    fetch(formURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+    }).then(() => {
+        alert("Mensaje enviado correctamente 💖");
+        document.getElementById("userMessage").value = "";
+    }).catch((error) => {
+        alert("Hubo un error al enviar el mensaje 😢");
+        console.error("Error:", error);
+    });
+});
