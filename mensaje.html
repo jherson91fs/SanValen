@@ -13,6 +13,16 @@
     <div class="hearts-container"></div>
     <div class="message-container">
         <p id="typed-message"></p>
+        <div class="response-options">
+            <button class="response-btn" onclick="showResponse('¡Yo también te quiero mucho! 💖')">🥰</button>
+            <button class="response-btn" onclick="showResponse('¡Eres lo mejor que me ha pasado! 💕')">😍</button>
+            <button class="response-btn" onclick="showResponse('Siempre juntos 💑')">💑</button>
+            <form id="messageForm" action="https://docs.google.com/forms/d/1eTM-li6lSa4q9jeiVPshfEfu_203qpTQ4JxGQBJNphc/viewform" method="POST" target="_blank">
+                <textarea name="entry.1586503523" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <button type="submit">Enviar Mensaje 💌</button>
+            </form>
+        </div>
+        <p id="response-message"></p>
     </div>
     <script src="mensaje_script.js"></script>
 </body>
