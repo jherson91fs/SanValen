@@ -48,6 +48,7 @@ button {
 #yesButton {
     background-color: #ff4081;
     color: white;
+    margin-right: 100px;
 }
 
 #yesButton:hover {
@@ -58,6 +59,7 @@ button {
     background-color: #757575;
     color: white;
     position: absolute;
+    margin-left: 100px;
 }
 
 #noButton:hover {
