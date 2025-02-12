@@ -45,27 +45,33 @@ function showResponse(text) {
 }
 
 
-document.getElementById("submitMessage").addEventListener("click", function() {
-    let message = document.getElementById("userMessage").value;
-    
-    if (message.trim() === "") {
-        alert("Por favor, escribe un mensaje antes de enviarlo.");
-        return;
-    }
+// Función para enviar mensaje sin redirigir a Google Forms
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("messageForm");
+    const textarea = document.querySelector("textarea[name='entry.1586503523']");
 
-    let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSerg2PqKnZ-EZHKytd92c3UirHqX07c_CF26gAMYekkxwXGiQ/formResponse";
-    let formData = new FormData();
-    formData.append("entry.1586503523", message);
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita que se redirija a Google Forms
 
-    fetch(formURL, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-    }).then(() => {
-        alert("Mensaje enviado correctamente 💖");
-        document.getElementById("userMessage").value = "";
-    }).catch((error) => {
-        alert("Hubo un error al enviar el mensaje 😢");
-        console.error("Error:", error);
+        if (textarea.value.trim() === "") {
+            alert("Por favor, escribe un mensaje antes de enviarlo.");
+            return;
+        }
+
+        let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSerg2PqKnZ-EZHKytd92c3UirHqX07c_CF26gAMYekkxwXGiQ/formResponse";
+        let formData = new FormData();
+        formData.append("entry.1586503523", textarea.value);
+
+        fetch(formURL, {
+            method: "POST",
+            body: formData,
+            mode: "no-cors"
+        }).then(() => {
+            alert("💌 ¡Tu mensaje ha sido enviado con éxito! 💖");
+            textarea.value = ""; // Borra el campo después de enviar
+        }).catch((error) => {
+            alert("❌ Hubo un error al enviar tu mensaje. Inténtalo de nuevo.");
+            console.error("Error:", error);
+        });
     });
 });
