@@ -33,7 +33,7 @@ const noButton = document.getElementById('noButton');
 const yesButton = document.getElementById('yesButton');
 const gifImage = document.getElementById('gifImage');
 const messages = [
-    "¿Seguro? 😢",
+    "¿Segura? 😢",
     "¿De verdad lo estás pensando? 💔",
     "No me hagas esto... 😭",
     "Piensa bien... 🥺",
